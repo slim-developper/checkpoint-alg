@@ -1,0 +1,36 @@
+ALGORITHM iterative_for
+VAR
+i:=0,vo:=0,j:=0: INTEGER;
+
+sum : INTEGER := 1;//le dernier mot de la phrase se termine par un point.
+l : INTEGER := 0; 
+v : ARRAY;
+
+BEGIN
+l=str.length;
+ write("donner une phrase qui se termine par un point");
+ Read(str);
+ IF (str[l-1]<>".") THEN
+     write("ce n/'est pas une phrase");
+ END_IF 
+ FOR i FROM 0 TO l-1   DO
+     IF((str[i]==CHAR)and(str[i+1]=" "))THEN
+     sum=sum+1;
+     END_IF
+ END_FOR
+ 
+v=["a","e","i","o","u"];
+FOR i FROM 0 TO l-2  DO
+    FOR j FROM 0 TO 4 DO
+    If(str[i]=v[j])THEN
+    vo=vo+1;
+    END_IF
+END_FOR 
+END_FOR
+
+
+
+   write ("la longueur de la phrase est:",l);
+   write("le nombre de mot est:",sum);
+  write("le nombre de voyelles est:",vo);
+END
